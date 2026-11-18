@@ -1,0 +1,6 @@
+{
+  "appId": "com.ultron.jailbreak",
+  "appName": "ULTRON.JAILBREAK V5",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
