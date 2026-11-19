@@ -30,6 +30,12 @@ jobs:
         env:
           VITE_API_URL: https://ultronai-jailbreak.onrender.com
 
+      - name: Prepare ULTRON icon
+        run: |
+          mkdir -p assets
+          cp ultron-icon.png assets/icon.png
+          npm install --no-save @capacitor/assets
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -49,6 +55,9 @@ jobs:
 
       - name: Create Android project
         run: npx cap add android
+
+      - name: Generate ULTRON Android icon
+        run: npx capacitor-assets generate --android --assetPath assets --iconBackgroundColor '#08090d' --iconBackgroundColorDark '#08090d'
 
       - name: Sync Android project
         run: npx cap sync android
